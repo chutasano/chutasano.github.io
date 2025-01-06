@@ -29,8 +29,7 @@ jobs:
 
       - name: OCaml Libs
         run: | 
-             ls
-             opam pin add ./talaria-bixtex
+             opam pin add ./talaria_bixtex
              opam install tyxml tyxml-ppx
         
       - name: Build pages
