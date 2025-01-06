@@ -19,6 +19,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Get submodule    
         run: git submodule update
 
       - name: OCaml
@@ -26,10 +28,12 @@ jobs:
         with:
           ocaml-compiler: 5
 
+      - name: OCaml Libs
       - run: | 
              opam install tyxml tyxml-ppx
              opam pin add ./talaria-bixtex
         
+      - name: Build pages
       - run: |
           opam exec -- dune build
           mkdir tmp
