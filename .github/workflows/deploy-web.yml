@@ -32,6 +32,7 @@ jobs:
       - run: |
           opam exec -- dune build
           mkdir tmp
+          cp main.css tmp
           cd tmp
           ../_build/default/main
 
