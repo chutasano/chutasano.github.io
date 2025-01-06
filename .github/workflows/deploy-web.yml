@@ -38,7 +38,7 @@ jobs:
           mkdir tmp
           cp main.css tmp
           cd tmp
-          ../_build/default/main
+          ../_build/default/main.exe
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
