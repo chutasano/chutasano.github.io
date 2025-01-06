@@ -29,12 +29,12 @@ jobs:
           ocaml-compiler: 5
 
       - name: OCaml Libs
-      - run: | 
+        run: | 
              opam install tyxml tyxml-ppx
              opam pin add ./talaria-bixtex
         
       - name: Build pages
-      - run: |
+        run: |
           opam exec -- dune build
           mkdir tmp
           cp main.css tmp
