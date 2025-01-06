@@ -22,7 +22,6 @@ jobs:
         with:
           submodules: true
 
-
       - name: OCaml
         uses: ocaml/setup-ocaml@v3
         with:
@@ -30,8 +29,9 @@ jobs:
 
       - name: OCaml Libs
         run: | 
-             opam install tyxml tyxml-ppx
+             ls
              opam pin add ./talaria-bixtex
+             opam install tyxml tyxml-ppx
         
       - name: Build pages
         run: |
