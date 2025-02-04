@@ -29,7 +29,10 @@ let%html head p =
 <head>
   <title>|}(Html.txt @@ page_name p){|</title>
   <link rel=stylesheet href="main.css"/>
+  <script src="main.js" defer></script>
 </head>
 |}
 
 let%html href url text = "<a href=\""url"\">"[Html.txt text]"</a>"
+
+let%html button text = "<button type=\"button\">"[Html.txt text]"</button>"

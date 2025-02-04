@@ -37,6 +37,7 @@ jobs:
           opam exec -- dune build
           mkdir tmp
           cp main.css tmp
+          cp main.js tmp
           cp -r resources tmp
           cd tmp
           ../_build/default/main.exe

@@ -7,6 +7,7 @@ let bib_name = "resources/cs.bib"
 let csc_acronym = str_field ~name:"csc_acronym"
 let csc_errata = str_field ~name:"csc_errata"
 let csc_hide = str_field ~name:"csc_hide" (* consider making this bool *)
+let csc_parent = str_field ~name:"csc_parent"
 
 let gen_keys () =
   let ( |>> ) database named_field =
@@ -16,8 +17,22 @@ let gen_keys () =
   |>> csc_acronym
   |>> csc_errata
   |>> csc_hide
+  |>> csc_parent
 
-let div_bibtex_item i =
+let items_gather_children is =
+  let item_gather_children i_k is =
+    List.filter
+      (fun (_, i) -> (match i.%{csc_parent.f} with
+      | None -> false
+      | Some(parent_k) -> i_k = parent_k)) is
+  in
+  List.fold_left
+    (fun acc (k, i) ->
+      if (Option.is_some i.%{csc_parent.f}) then acc (* will be included as part of some other entry*)
+      else ((k, i), item_gather_children k is)::acc)
+    [] is
+
+let div_bibtex_item (_, i) =
   let author_names = Option.get i.%{authors.f} in
   let author_strs = List.map (fun n -> n.firstname ^ " " ^ n.lastname) author_names in
   let author_str = (match author_strs with
@@ -46,7 +61,15 @@ let div_bibtex_item i =
     | [] -> []
     | _ -> [txt " ["] @ cite_links @ [txt "]"] in
   div ([cite] @ cite_links')
-  
+
+let div_bibtex_entries (parent, children) =
+  let divs_children = List.map div_bibtex_item children in
+  if List.is_empty divs_children then div_bibtex_item parent
+  else
+    let div_parent = div_bibtex_item parent in
+    let open Tyxml.Html in
+    div ~a:[a_class["pubs_parent"]] [button [txt "+"]; div_parent; br (); div ~a:[a_class["pubs_children"]] divs_children]
+
 let src () =
   let ifile = open_in bib_name in
   let pubs_map = Bibtex.parse ~with_keys:(gen_keys ()) (Lexing.from_channel ifile) in
@@ -57,8 +80,11 @@ let src () =
       let m1, m2 = (Option.value ~default:1 i1.%{month.f}, Option.value ~default:1 i2.%{month.f}) in
       compare (y1, m1) (y2, m2))
     (Bibtex.Database.bindings pubs_map) in
+  (* if any are set to be hidden, remove them here *)
   let pubs' = List.filter (fun (_, i) -> not @@ bool_of_string @@ Option.value ~default:"false" i.%{csc_hide.f}) pubs in
-  let divs = List.rev @@ List.map (fun (_, i) -> div_bibtex_item i) pubs' in
+  (* gather entries into lists of (i, i_list) where i_list contains all children of i *)
+  let pubs'' = items_gather_children pubs' in
+  let divs = List.map div_bibtex_entries (List.rev pubs'') in
   let open Tyxml.Html in
   let t1 = div [h1 [txt "Publications"]] in
   let index = html (Aux.head Aux.Publications) (body @@ [Aux.navbar Aux.Publications] @ [t1] @ divs) in

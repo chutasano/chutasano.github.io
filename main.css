@@ -36,3 +36,13 @@ body {
 a {
   color: #084C61
 }
+
+.pubs_parent div {
+  display: inline;
+}
+
+.pubs_children div {
+  overflow: hidden;
+  display: none;
+  margin-left: 25px;
+}
