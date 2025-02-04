@@ -4,6 +4,11 @@ var i;
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
     // this.classList.toggle("active");
+    if (this.innerHTML == "+") {
+      this.innerHTML = "-";
+    } else {
+      this.innerHTML = "+";
+    }
     var children = this.parentNode.querySelectorAll(".pubs_children div");
     for (i = 0; i < children.length; i++) {
       if (children[i].style.display === "block") {
