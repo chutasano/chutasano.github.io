@@ -78,13 +78,13 @@ let src () =
       let y1, y2 = (Option.get i1.%{year.f}, Option.get i2.%{year.f}) in
       (* allowing months to be omitted *)
       let m1, m2 = (Option.value ~default:1 i1.%{month.f}, Option.value ~default:1 i2.%{month.f}) in
-      compare (y1, m1) (y2, m2))
+      compare (y2, m2) (y1, m1))
     (Bibtex.Database.bindings pubs_map) in
   (* if any are set to be hidden, remove them here *)
   let pubs' = List.filter (fun (_, i) -> not @@ bool_of_string @@ Option.value ~default:"false" i.%{csc_hide.f}) pubs in
   (* gather entries into lists of (i, i_list) where i_list contains all children of i *)
   let pubs'' = items_gather_children pubs' in
-  let divs = List.map div_bibtex_entries (List.rev pubs'') in
+  let divs = List.map div_bibtex_entries pubs'' in
   let open Tyxml.Html in
   let t1 = div [h1 [txt "Publications"]] in
   let index = html (Aux.head Aux.Publications) (body @@ [Aux.navbar Aux.Publications] @ [t1] @ divs) in
