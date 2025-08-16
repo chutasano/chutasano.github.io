@@ -8,5 +8,4 @@
 
 (package
   (name main)
-  (depends ocaml dune)
   )
