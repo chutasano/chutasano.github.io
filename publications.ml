@@ -52,11 +52,16 @@ let div_bibtex_item (_, i) =
   let term_str = (match acr_str with
     | None -> year_str
     | Some(s) -> s ^ "'" ^ year_str) in
+  let pdf_file = "resources/" ^ (Option.get i.%{uid.f}) ^ ".pdf" in
   let doi = i.%{doi.f} in
-  let links = [Option.map (fun doi -> ("https://doi.org/" ^ (String.concat "/" doi), "doi")) doi] in
+  let links = [
+    if Sys.file_exists pdf_file then Some(pdf_file, "PDF") else None;
+    Option.map (fun doi -> ("https://doi.org/" ^ (String.concat "/" doi), "doi")) doi
+  ] in
   let open Tyxml.Html in
   let cite = txt (author_str ^ ". " ^ title_str ^ ", " ^ term_str) in
-  let cite_links = List.map (fun (url, text) -> Aux.href url text) @@ List.map Option.get @@ List.filter Option.is_some links in
+  let cite_links =
+    List.map (fun (url, text) -> Aux.href url text) @@ List.map Option.get @@ List.filter Option.is_some links in
   let cite_links' = match cite_links with
     | [] -> []
     | _ -> [txt " ["] @ cite_links @ [txt "]"] in
