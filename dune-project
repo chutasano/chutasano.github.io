@@ -6,7 +6,12 @@
 
 (authors "Chuta Sano")
 
+(maintainers "chutasano@gmail.com")
+
+(source (github "chutasano/chutasano.github.io"))
+
 (package
   (name main)
+  (synopsis "webgen")
   (depends ocaml dune)
   )
