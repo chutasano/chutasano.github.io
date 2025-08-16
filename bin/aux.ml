@@ -3,16 +3,19 @@ open Tyxml
 type page =
   Home
 | Publications
+| Contact
 
-let pages = [Home; Publications]
+let pages = [Home; Publications; Contact]
 
 let page_url page = match page with
 | Home -> "index.html"
 | Publications -> "publications.html"
+| Contact -> "contact.html"
 
 let page_name page = match page with
 | Home -> "Home"
 | Publications -> "Publications"
+| Contact -> "Contact"
 
 
 let navbar active_page =

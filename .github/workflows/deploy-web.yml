@@ -40,7 +40,7 @@ jobs:
           cp main.js tmp
           cp -r resources tmp
           cd tmp
-          ../_build/default/main.exe
+          ../_build/install/default/bin/main
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

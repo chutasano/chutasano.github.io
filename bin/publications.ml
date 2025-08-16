@@ -54,6 +54,7 @@ let div_bibtex_item (_, i) =
     | Some(s) -> s ^ "'" ^ year_str) in
   let pdf_file = "resources/" ^ (Option.get i.%{uid.f}) ^ ".pdf" in
   let doi = i.%{doi.f} in
+  let note = i.%{note.f} in
   let links = [
     if Sys.file_exists pdf_file then Some(pdf_file, "PDF") else None;
     Option.map (fun doi -> ("https://doi.org/" ^ (String.concat "/" doi), "doi")) doi
@@ -62,11 +63,21 @@ let div_bibtex_item (_, i) =
   let cite = txt (author_str ^ ". " ^ title_str ^ ", " ^ term_str) in
   let cite_links =
     List.map (fun (url, text) -> Aux.href url text) @@ List.map Option.get @@ List.filter Option.is_some links in
-  let cite_links' = match cite_links with
-    | [] -> []
-    | _ -> [txt " ["] @ cite_links @ [txt "]"] in
-  let _ = div ([cite] @ cite_links') in
-  div []
+  let cite_links' = 
+    let rec _insert_bar l =
+      match l with
+      | [] -> l
+      | [_] -> l
+      | hd::tl -> hd :: (txt " | ") :: (_insert_bar tl)
+    in
+    if List.is_empty cite_links then []
+    else (txt " [")::(_insert_bar cite_links) @ [txt "]"]
+  in
+  let note = match note with
+  | Some(note_str) -> [(txt ("(" ^ note_str ^ ") "))]
+  | None -> []
+  in
+  div ~a:[a_class["pubs"]] (note @ [cite] @ cite_links')
 
 let div_bibtex_entries (parent, children) =
   let divs_children = List.map div_bibtex_item children in
@@ -84,7 +95,7 @@ let src () =
       let y1, y2 = (Option.get i1.%{year.f}, Option.get i2.%{year.f}) in
       (* allowing months to be omitted *)
       let m1, m2 = (Option.value ~default:1 i1.%{month.f}, Option.value ~default:1 i2.%{month.f}) in
-      compare (y2, m2) (y1, m1))
+      compare (y1, m1) (y2, m2))
     (Bibtex.Database.bindings pubs_map) in
   (* if any are set to be hidden, remove them here *)
   let pubs' = List.filter (fun (_, i) -> not @@ bool_of_string @@ Option.value ~default:"false" i.%{csc_hide.f}) pubs in
