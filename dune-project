@@ -8,5 +8,5 @@
 
 (package
   (name main)
-  (depends tyxml ocaml dune)
+  (depends ocaml dune)
   )
