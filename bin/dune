@@ -1,6 +1,7 @@
 (executable
   (name      main)
+  (public_name main)
   (libraries tyxml talaria-bibtex)
   (preprocess (pps tyxml-ppx))
-  )
+)
 

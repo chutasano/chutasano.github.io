@@ -65,7 +65,8 @@ let div_bibtex_item (_, i) =
   let cite_links' = match cite_links with
     | [] -> []
     | _ -> [txt " ["] @ cite_links @ [txt "]"] in
-  div ([cite] @ cite_links')
+  let _ = div ([cite] @ cite_links') in
+  div []
 
 let div_bibtex_entries (parent, children) =
   let divs_children = List.map div_bibtex_item children in

@@ -41,7 +41,6 @@ jobs:
           cp -r resources tmp
           cd tmp
           ../_build/default/main.exe
-          rm -r resources
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
