@@ -1,3 +1,4 @@
 [submodule "talaria_bibtex"]
 	path = talaria_bibtex
-	url = git@github.com:chutasano/talaria_bibtex.git
+        url = https://github.com/chutasano/talaria_bibtex.git
+
