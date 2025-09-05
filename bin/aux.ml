@@ -30,7 +30,7 @@ let navbar active_page =
 let%html head p =
 {|
 <head>
-  <title>|}(Html.txt @@ page_name p){|</title>
+  <title>|}(Html.txt @@ ("Chuta Sano: " ^ page_name p)){|</title>
   <link rel=stylesheet href="main.css"/>
   <script src="main.js" defer></script>
 </head>
