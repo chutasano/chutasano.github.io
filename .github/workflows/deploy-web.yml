@@ -39,6 +39,7 @@ jobs:
           cp main.css tmp
           cp main.js tmp
           cp -r resources tmp
+          cp googlefb3a4debafd61d62.html tmp
           cd tmp
           ../_build/install/default/bin/main
 
