@@ -35,7 +35,7 @@ jobs:
       - name: Texlive
         run: |
              sudo apt-get update -y
-             sudo apt-get install -y texlive latexmk
+             sudo apt-get install -y texlive-full latexmk
         
       - name: Build pages
         run: |
