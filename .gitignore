@@ -1,4 +1,8 @@
 *.swp
 _build
 _opam
+cv/cs.bib
+*.bbl
+cv/*.pdf
+cv/*.run.xml
 www
