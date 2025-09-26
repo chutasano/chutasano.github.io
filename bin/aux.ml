@@ -3,18 +3,21 @@ open Tyxml
 type page =
   Home
 | Publications
+| Cv
 | Contact
 
-let pages = [Home; Publications; Contact]
+let pages = [Home; Publications; Cv; Contact]
 
 let page_url page = match page with
 | Home -> "index.html"
 | Publications -> "publications.html"
+| Cv -> "cv.html"
 | Contact -> "contact.html"
 
 let page_name page = match page with
 | Home -> "Home"
 | Publications -> "Publications"
+| Cv -> "CV"
 | Contact -> "Contact"
 
 

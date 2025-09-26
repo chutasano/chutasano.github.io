@@ -38,15 +38,35 @@ a {
   color: #084C61
 }
 
-.pubs_parent div {
+ul.pub-list {
+  list-style-type: none;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.pub-list li {
+  margin-bottom: 20px;
+}
+
+
+.pubs-parent div {
   display: inline;
 }
 
-.pubs_children div {
+.pubs-parent li {
+}
+
+.pubs-children ul {
   overflow: hidden;
   display: none;
   margin-left: 25px;
 }
+
+.pubs-children li {
+  margin-bottom: 0px;
+  display: none;
+}
+
 
 body {
   font-size : 20px;

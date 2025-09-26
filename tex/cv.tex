@@ -1,0 +1,166 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage[colorlinks=true, urlcolor=blue, citecolor=black]
+{hyperref}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage[maxbibnames=15,sorting=ydnt, defernumbers=true]{biblatex}
+
+\renewbibmacro*{doi+eprint+url}{%
+\iftoggle{bbx:url}{\iffieldundef{doi}
+{\usebibmacro{url+urldate}}{}}{}%
+\newunit\newblock\iftoggle{bbx:eprint}{\usebibmacro{eprint}}{}%
+\newunit\newblock\iftoggle{bbx:doi}{\printfield{doi}}{}}
+
+% TODO need to manually maintain, should fix w/ longer-term solution
+\DeclareBibliographyCategory{arxiv}
+\addtocategory{arxiv}{Sano23arxiv, Sano21arxiv}
+
+% Header
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Chuta Sano}
+\lhead{Curriculum Vitae}
+\rfoot{\thepage}
+
+\bibliography{cs}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Chuta Sano}} \\
+    PhD Student, McGill University \\
+    \href{mailto:chuta.sano@mail.mcgill.ca}{chuta.sano@mail.mcgill.ca} \\
+    Phone: 1-508-598-2492 \\
+    Website: \href{https://chutasano.github.io}{https://chutasano.github.io}
+\end{center}
+
+\section*{Education}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{McGill University}, PhD in Computer Science \\
+    August 2022 – Present (Expected graduation: Summer 2026) \\
+    Advisor: Prof. Brigitte Pientka
+    \item \textbf{Carnegie Mellon University}, MS in Computer Science \\
+    August 2018 – December 2019 \\
+    Advisor: Prof. Frank Pfenning \\
+    Thesis: On Session-Typed Contracts for Imperative Languages
+    \item \textbf{University of Massachusetts Lowell}, BSc in Computer Science, Data Science Concentration, Math Minor \\
+    August 2015 – May 2018 \\
+    Advisor: Prof. Xinwen Fu \\
+    Thesis: Turning Legacy IR Devices into Smart IoT Devices
+\end{itemize}
+
+\section*{Publications}
+\printbibliography[heading=none, nottype=software, notcategory=arxiv]
+
+\section*{Research}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{McGill University}, August 2022 -- Present
+    \begin{itemize}
+      \item I investigated techniques to mechanize substructural languages via higher-order abstract syntax in the proof assistant Beluga. One approach~\cite{Sano23oopsla} led to a mechanization of session types, which have a linear type system. I also adviced many student projects that used this technique. I also worked on an alternate approach that later led to a general framework for mechanizing a whole suite of substructural languages~\cite{Zackon25cpp}.
+      \item I am investigating language interoperability between languages with substantially different semantics, e.g., functional programming and session-typed process calculi. I develop a notion of first-class code that enables a functional language to generate, analyze, and run process calculus code~\cite{Sano25icfp}. I am generalizing this approach to capture interactions between functional languages and a broader set of languages, including an assembly-like language and a quantum programming language.
+    \end{itemize}
+  \item \textbf{Max Planck Institute for Software Systems}, September 2023 -- October 2023
+    \begin{itemize}
+      \item As a visiting researcher, I worked on extending session types with probability (no publications) and metaprogramming~\cite{Sano25icfp}.
+    \end{itemize}
+  \item \textbf{Carnegie Mellon University} August 2018 -- October 2021
+    \begin{itemize}
+      \item I extended the CC0 compiler, a C-like language extended with session-typed concurrency, with monitors. I extended the theory of monitors to support shared session types and formalized it in my thesis~\cite{Sano19ms}
+      \item I extended shared session types with subtyping~\cite{Sano21coordination}, enabling the static encoding of shared protocols with ``phases,'' i.e., protocols that can be encoded in a (finite) state machine.
+    \end{itemize}
+  \item \textbf{University of Massachusetts Lowell}, \emph{Robotics Research Group} September 2016 -- May 2017
+    \begin{itemize}
+      \item I developed a ROS-based service that receives a top-down image of a robot and its surroundings to simulate laser scan outputs done by the robot. This was used in conjunction with TinyRobo, a swarm robot project.
+      \item I implemented a real time FaceDetector for GoogleGlass using OpenCV and Android NDK, and then optimized it by devising a handoff mechanism between generic Android devices through first class continuations.
+    \end{itemize}
+  \item \textbf{University of Massachusetts Lowell}, \emph{Center for Internet Safety and Forensic Education and Research} August 2015 -- May 2018
+    \begin{itemize}
+      \item I surveyed various consumer phones with stereocameras and conducted experiments to determine their attack capabilities~\cite{Li17icc}.
+      \item I researched common IR-based products and their protocols. This led to a proposing of a few attack models and the desigining of low-cost devices that bridge IR and IoT devices~\cite{Sano18wasa}.
+      \item I maintained and enhanced the Privacy Enhancing Keyboard application for Android based on usability experiments~\cite{Ling17wasa, Ling17wcmc}.
+    \end{itemize}
+\end{itemize}
+
+\section*{Conference/Invited Talks}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Fusing Session-Typed Concurrent Programming into Functional Programming}
+    \begin{itemize}
+        \item International Conference on Functional Programming (ICFP), October 2025
+        \item McGill University (COMEPLS), September 2024
+        \item Languages and Logic Montreal (LLM), March 2025
+        \item Eastern Canada Logic and Programming Seminar (ECLaPS), December 2024
+    \end{itemize}
+
+    \item \textbf{Mechanizing Session-Types using a Structural View: Enforcing Linearity without Linearity}
+    \begin{itemize}
+        \item Object-Oriented Programming, Systems, Languages, and Applications (OOPSLA), October 2023
+        \item University of Tokyo, May 2023
+        \item Kyoto University, May 2023
+        \item Eastern Canada Logic and Programming Seminar (ECLaPS), March 2023
+    \end{itemize}
+
+    \item \textbf{Manifestly Phased Communication via Shared Session Types}
+    \begin{itemize}
+      \item International Conference on Coordination Models and Languages (COORDINATION), June 2021
+        \item McGill University (COMEPLS), October 2024
+        \item University of Edinburgh, October 2021
+    \end{itemize}
+
+\end{itemize}
+
+
+
+
+\section*{Teaching}
+\begin{itemize}[leftmargin=*]
+  \item McGill University
+    \begin{itemize}
+      \item Winter 2025: COMP527 – Logic and Computation, Teaching Assistant
+      \item Winter 2023: COMP527 – Logic and Computation, Teaching Assistant
+      \item Fall 2022: COMP302 – Programming Languages and Paradigms, Teaching Assistant
+    \end{itemize}
+  \item Oregon Programming Languages Summer School, 2021
+    \begin{itemize}
+      \item Course assistant: \emph{Session-Typed Concurrent Programming}.
+    \end{itemize}
+
+  \item University of Massachusetts Lowell
+    \begin{itemize}
+      \item Mathematics Tutor: Taught Calculus, Discrete Math, Linear Algebra, Probability, and Number Theory
+    \end{itemize}
+\end{itemize}
+
+\section*{Services}
+\begin{itemize}[leftmargin=*]
+  \item Organizer of Conference of McGill's Epic Programming Language Systems (COMEPLS), 2023 -- 2025
+  \item External Reviewer for FSCD, 2024
+  \item External Reviewer for LFMTP, 2024
+  \item Mentor for McGill CSGS Bridge Mentorship Program, 2023 -- 2024
+\end{itemize}
+
+
+\section*{Awards \& Honors}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Tomlinson Graduate Fellowship}, McGill University, 2022 -- 2025
+    \item \textbf{Best Teaching Assistant Award}, McGill University, Winter 2023 \\
+    Recognized for my TA-ship of COMP527 based on student nominations
+  \item \textbf{Latorre Family Scholarship}, University of Massachusetts Lowell, 2017
+  \item \textbf{Co-op Scholar}, University of Massachusetts Lowell, 2016
+  \item \textbf{Dean's Scholarship}, University of Massachusetts Lowell, 2015 -- 2018
+  \item \textbf{Professor George Grinstein Scholarship}, University of Massachusetts Lowell, 2015
+\end{itemize}
+
+\section*{Software Artifacts}
+\nocite{*}
+\printbibliography[heading=none, type=software, resetnumbers=true]
+
+
+
+
+\end{document}

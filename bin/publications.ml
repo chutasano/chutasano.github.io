@@ -52,7 +52,7 @@ let div_bibtex_item (_, i) =
   let term_str = (match acr_str with
     | None -> year_str
     | Some(s) -> s ^ "'" ^ year_str) in
-  let pdf_file = "resources/" ^ (Option.get i.%{uid.f}) ^ ".pdf" in
+  let pdf_file = "pdf/" ^ (Option.get i.%{uid.f}) ^ ".pdf" in
   let doi = i.%{doi.f} in
   let note = i.%{note.f} in
   let links = [
@@ -60,7 +60,6 @@ let div_bibtex_item (_, i) =
     Option.map (fun doi -> ("https://doi.org/" ^ (String.concat "/" doi), "doi")) doi
   ] in
   let open Tyxml.Html in
-  let cite = txt (author_str ^ ". " ^ title_str ^ ", " ^ term_str) in
   let cite_links =
     List.map (fun (url, text) -> Aux.href url text) @@ List.map Option.get @@ List.filter Option.is_some links in
   let cite_links' = 
@@ -74,10 +73,12 @@ let div_bibtex_item (_, i) =
     else (txt " [")::(_insert_bar cite_links) @ [txt "]"]
   in
   let note = match note with
-  | Some(note_str) -> [(txt ("(" ^ note_str ^ ") "))]
+  | Some(note_str) -> [txt (" (" ^ note_str ^ ") ")]
   | None -> []
   in
-  div ~a:[a_class["pubs"]] (note @ [cite] @ cite_links')
+  div ~a:[a_class["pubs"]]
+    ([strong [txt title_str]] @ note @ cite_links' @
+    [br (); txt (author_str ^ ". " ^ term_str)])
 
 let div_bibtex_entries (parent, children) =
   let divs_children = List.map div_bibtex_item children in
@@ -85,7 +86,11 @@ let div_bibtex_entries (parent, children) =
   else
     let div_parent = div_bibtex_item parent in
     let open Tyxml.Html in
-    div ~a:[a_class["pubs_parent"]] [button [txt "+"]; div_parent; br (); div ~a:[a_class["pubs_children"]] divs_children]
+    div ~a:[a_class["pubs-parent"]]
+      [button [txt "+"]; div_parent;
+       br ();
+       ul ~a:[a_class["pubs-children"]]
+         (List.map (fun c -> li [c]) divs_children)]
 
 let src () =
   let ifile = open_in bib_name in
@@ -104,6 +109,10 @@ let src () =
   let divs = List.map div_bibtex_entries pubs'' in
   let open Tyxml.Html in
   let t1 = div [h1 [txt "Publications"]] in
-  let index = html (Aux.head Aux.Publications) (body @@ [Aux.navbar Aux.Publications] @ [t1] @ divs) in
+  let index =
+    html (Aux.head Aux.Publications)
+      (body @@
+        [Aux.navbar Aux.Publications; t1] @
+        [ul ~a:[a_class["pub-list"]] (List.map (fun c -> li [c]) divs)]) in
   index
 

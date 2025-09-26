@@ -31,17 +31,15 @@ jobs:
         run: | 
              opam pin add talaria_bibtex
              opam install tyxml tyxml-ppx
+
+      - name: Texlive
+        run: |
+             sudo apt-get update -y
+             sudo apt-get install -y texlive
         
       - name: Build pages
         run: |
-          opam exec -- dune build
-          mkdir tmp
-          cp main.css tmp
-          cp main.js tmp
-          cp -r resources tmp
-          cp googlefb3a4debafd61d62.html tmp
-          cd tmp
-          ../_build/install/default/bin/main
+             make
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -50,7 +48,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: 'tmp'
+          path: 'www'
 
       - name: Deploy to GitHub Pages
         id: deployment

@@ -1,0 +1,782 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{ydnt/global//global/global}
+    \entry{Sano25icfp}{article}{}
+      \name{author}{5}{}{%
+        {{hash=50975165ba8174e7dc08ab46461cbdd8}{%
+           family={Sano},
+           familyi={S\bibinitperiod},
+           given={Chuta},
+           giveni={C\bibinitperiod}}}%
+        {{hash=02f931af1c81227a7825bb46069a6eb7}{%
+           family={Garg},
+           familyi={G\bibinitperiod},
+           given={Deepak},
+           giveni={D\bibinitperiod}}}%
+        {{hash=30827af66e20355c906e6a09d544cde9}{%
+           family={Kavanagh},
+           familyi={K\bibinitperiod},
+           given={Ryan},
+           giveni={R\bibinitperiod}}}%
+        {{hash=58d01692df42f9facb08eec4b9adbcdc}{%
+           family={Pientka},
+           familyi={P\bibinitperiod},
+           given={Brigitte},
+           giveni={B\bibinitperiod}}}%
+        {{hash=5a3f3ca377998b15317560c74b43e26b}{%
+           family={Toninho},
+           familyi={T\bibinitperiod},
+           given={Bernardo},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{cf711633f23b34da8fce78ac4d178c56}
+      \strng{fullhash}{ca908886a9c938388800e43e2ac40527}
+      \strng{bibnamehash}{ca908886a9c938388800e43e2ac40527}
+      \strng{authorbibnamehash}{ca908886a9c938388800e43e2ac40527}
+      \strng{authornamehash}{cf711633f23b34da8fce78ac4d178c56}
+      \strng{authorfullhash}{ca908886a9c938388800e43e2ac40527}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proc. ACM Program. Lang.}
+      \field{month}{8}
+      \field{number}{ICFP}
+      \field{title}{Fusing Session-Typed Concurrent Programming into Functional Programming}
+      \field{volume}{9}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.1145/3747519
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3747519
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3747519
+      \endverb
+    \endentry
+    \entry{Sano25icfp-art}{software}{}
+      \name{author}{5}{}{%
+        {{hash=50975165ba8174e7dc08ab46461cbdd8}{%
+           family={Sano},
+           familyi={S\bibinitperiod},
+           given={Chuta},
+           giveni={C\bibinitperiod}}}%
+        {{hash=02f931af1c81227a7825bb46069a6eb7}{%
+           family={Garg},
+           familyi={G\bibinitperiod},
+           given={Deepak},
+           giveni={D\bibinitperiod}}}%
+        {{hash=30827af66e20355c906e6a09d544cde9}{%
+           family={Kavanagh},
+           familyi={K\bibinitperiod},
+           given={Ryan},
+           giveni={R\bibinitperiod}}}%
+        {{hash=58d01692df42f9facb08eec4b9adbcdc}{%
+           family={Pientka},
+           familyi={P\bibinitperiod},
+           given={Brigitte},
+           giveni={B\bibinitperiod}}}%
+        {{hash=5a3f3ca377998b15317560c74b43e26b}{%
+           family={Toninho},
+           familyi={T\bibinitperiod},
+           given={Bernardo},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Zenodo}%
+      }
+      \strng{namehash}{cf711633f23b34da8fce78ac4d178c56}
+      \strng{fullhash}{ca908886a9c938388800e43e2ac40527}
+      \strng{bibnamehash}{ca908886a9c938388800e43e2ac40527}
+      \strng{authorbibnamehash}{ca908886a9c938388800e43e2ac40527}
+      \strng{authornamehash}{cf711633f23b34da8fce78ac4d178c56}
+      \strng{authorfullhash}{ca908886a9c938388800e43e2ac40527}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{Software artifact}
+      \field{title}{Fusing Session-typed Concurrent Programming into Functional Programming - Implementation}
+      \field{version}{1}
+      \field{year}{2025}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.5281/zenodo.15643008
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.5281/zenodo.15643008
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.5281/zenodo.15643008
+      \endverb
+    \endentry
+    \entry{Zackon25cpp}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=bf1bcbc5cafc1254eb3351dc8ef5c3ac}{%
+           family={Zackon},
+           familyi={Z\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=50975165ba8174e7dc08ab46461cbdd8}{%
+           family={Sano},
+           familyi={S\bibinitperiod},
+           given={Chuta},
+           giveni={C\bibinitperiod}}}%
+        {{hash=0b20d6d948aa308842cd9e343b409a4c}{%
+           family={Momigliano},
+           familyi={M\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod}}}%
+        {{hash=58d01692df42f9facb08eec4b9adbcdc}{%
+           family={Pientka},
+           familyi={P\bibinitperiod},
+           given={Brigitte},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{0ccb2745180e6650406c9135eb1ea237}
+      \strng{fullhash}{1b4eb242a28c69106f0a757369e95915}
+      \strng{bibnamehash}{1b4eb242a28c69106f0a757369e95915}
+      \strng{authorbibnamehash}{1b4eb242a28c69106f0a757369e95915}
+      \strng{authornamehash}{0ccb2745180e6650406c9135eb1ea237}
+      \strng{authorfullhash}{1b4eb242a28c69106f0a757369e95915}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 14th ACM SIGPLAN International Conference on Certified Programs and Proofs}
+      \field{isbn}{9798400713477}
+      \field{series}{CPP ’25}
+      \field{title}{Split Decisions: Explicit Contexts for Substructural Languages}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \field{pages}{257\bibrangedash 271}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1145/3703595.3705888
+      \endverb
+      \verb{urlraw}
+      \verb https://dl.acm.org/doi/10.1145/3703595.3705888
+      \endverb
+      \verb{url}
+      \verb https://dl.acm.org/doi/10.1145/3703595.3705888
+      \endverb
+    \endentry
+    \entry{Sano23oopsla-art}{software}{}
+      \name{author}{3}{}{%
+        {{hash=50975165ba8174e7dc08ab46461cbdd8}{%
+           family={Sano},
+           familyi={S\bibinitperiod},
+           given={Chuta},
+           giveni={C\bibinitperiod}}}%
+        {{hash=30827af66e20355c906e6a09d544cde9}{%
+           family={Kavanagh},
+           familyi={K\bibinitperiod},
+           given={Ryan},
+           giveni={R\bibinitperiod}}}%
+        {{hash=58d01692df42f9facb08eec4b9adbcdc}{%
+           family={Pientka},
+           familyi={P\bibinitperiod},
+           given={Brigitte},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Zenodo}%
+      }
+      \strng{namehash}{fc2cbfad1eae9fd23a18608f2428992a}
+      \strng{fullhash}{fc2cbfad1eae9fd23a18608f2428992a}
+      \strng{bibnamehash}{fc2cbfad1eae9fd23a18608f2428992a}
+      \strng{authorbibnamehash}{fc2cbfad1eae9fd23a18608f2428992a}
+      \strng{authornamehash}{fc2cbfad1eae9fd23a18608f2428992a}
+      \strng{authorfullhash}{fc2cbfad1eae9fd23a18608f2428992a}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{note}{Software artifact}
+      \field{title}{Mechanizing Session-Types using a Structural View}
+      \field{version}{1.0}
+      \field{year}{2023}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.5281/zenodo.8329645
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.5281/zenodo.8329645
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.5281/zenodo.8329645
+      \endverb
+    \endentry
+    \entry{Sano23arxiv}{article}{}
+      \name{author}{3}{}{%
+        {{hash=50975165ba8174e7dc08ab46461cbdd8}{%
+           family={Sano},
+           familyi={S\bibinitperiod},
+           given={Chuta},
+           giveni={C\bibinitperiod}}}%
+        {{hash=30827af66e20355c906e6a09d544cde9}{%
+           family={Kavanagh},
+           familyi={K\bibinitperiod},
+           given={Ryan},
+           giveni={R\bibinitperiod}}}%
+        {{hash=58d01692df42f9facb08eec4b9adbcdc}{%
+           family={Pientka},
+           familyi={P\bibinitperiod},
+           given={Brigitte},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{fc2cbfad1eae9fd23a18608f2428992a}
+      \strng{fullhash}{fc2cbfad1eae9fd23a18608f2428992a}
+      \strng{bibnamehash}{fc2cbfad1eae9fd23a18608f2428992a}
+      \strng{authorbibnamehash}{fc2cbfad1eae9fd23a18608f2428992a}
+      \strng{authornamehash}{fc2cbfad1eae9fd23a18608f2428992a}
+      \strng{authorfullhash}{fc2cbfad1eae9fd23a18608f2428992a}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{month}{9}
+      \field{note}{Technical report}
+      \field{title}{Mechanizing Session-Types using a Structural View: Enforcing Linearity without Linearity}
+      \field{year}{2023}
+      \true{nocite}
+      \verb{eprint}
+      \verb 2309.12466
+      \endverb
+    \endentry
+    \entry{Sano23oopsla}{article}{}
+      \name{author}{3}{}{%
+        {{hash=50975165ba8174e7dc08ab46461cbdd8}{%
+           family={Sano},
+           familyi={S\bibinitperiod},
+           given={Chuta},
+           giveni={C\bibinitperiod}}}%
+        {{hash=30827af66e20355c906e6a09d544cde9}{%
+           family={Kavanagh},
+           familyi={K\bibinitperiod},
+           given={Ryan},
+           giveni={R\bibinitperiod}}}%
+        {{hash=58d01692df42f9facb08eec4b9adbcdc}{%
+           family={Pientka},
+           familyi={P\bibinitperiod},
+           given={Brigitte},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{fc2cbfad1eae9fd23a18608f2428992a}
+      \strng{fullhash}{fc2cbfad1eae9fd23a18608f2428992a}
+      \strng{bibnamehash}{fc2cbfad1eae9fd23a18608f2428992a}
+      \strng{authorbibnamehash}{fc2cbfad1eae9fd23a18608f2428992a}
+      \strng{authornamehash}{fc2cbfad1eae9fd23a18608f2428992a}
+      \strng{authorfullhash}{fc2cbfad1eae9fd23a18608f2428992a}
+      \field{extraname}{3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proc. {ACM} Program. Lang.}
+      \field{number}{{OOPSLA2}}
+      \field{title}{Mechanizing Session-Types using a Structural View: Enforcing Linearity without Linearity}
+      \field{volume}{7}
+      \field{year}{2023}
+      \field{pages}{374\bibrangedash 399}
+      \range{pages}{26}
+      \verb{doi}
+      \verb 10.1145/3622810
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3622810
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3622810
+      \endverb
+    \endentry
+    \entry{Sano21coordination}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=50975165ba8174e7dc08ab46461cbdd8}{%
+           family={Sano},
+           familyi={S\bibinitperiod},
+           given={Chuta},
+           giveni={C\bibinitperiod}}}%
+        {{hash=3c7e9d5ed868ff95dac9adfba00b2e7a}{%
+           family={Balzer},
+           familyi={B\bibinitperiod},
+           given={Stephanie},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6fa187678bcd9926269af2195cb766bb}{%
+           family={Pfenning},
+           familyi={P\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=4e535fe09f322117648feb5ad1ee60f7}{%
+           family={Damiani},
+           familyi={D\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=0ad6fbba0f8cc80baf1ee4fef3463ff3}{%
+           family={Dardha},
+           familyi={D\bibinitperiod},
+           given={O.},
+           giveni={O\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Valletta, Malta}%
+      }
+      \list{publisher}{1}{%
+        {Springer LNCS 12717}%
+      }
+      \strng{namehash}{2579ac7aba8ad15a81b909ebabddfdb0}
+      \strng{fullhash}{2579ac7aba8ad15a81b909ebabddfdb0}
+      \strng{bibnamehash}{2579ac7aba8ad15a81b909ebabddfdb0}
+      \strng{authorbibnamehash}{2579ac7aba8ad15a81b909ebabddfdb0}
+      \strng{authornamehash}{2579ac7aba8ad15a81b909ebabddfdb0}
+      \strng{authorfullhash}{2579ac7aba8ad15a81b909ebabddfdb0}
+      \strng{editorbibnamehash}{6c4beffe72b45ccfa78fbb12db9172ab}
+      \strng{editornamehash}{6c4beffe72b45ccfa78fbb12db9172ab}
+      \strng{editorfullhash}{6c4beffe72b45ccfa78fbb12db9172ab}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{23rd International Conference on Coordination Models and Languages (COORDINATION 2021)}
+      \field{month}{6}
+      \field{title}{Manifestly Phased Communication via Shared Session Types}
+      \field{year}{2021}
+      \field{pages}{23\bibrangedash 40}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1007/978-3-030-78142-2_2
+      \endverb
+    \endentry
+    \entry{Sano21arxiv}{article}{}
+      \name{author}{3}{}{%
+        {{hash=50975165ba8174e7dc08ab46461cbdd8}{%
+           family={Sano},
+           familyi={S\bibinitperiod},
+           given={Chuta},
+           giveni={C\bibinitperiod}}}%
+        {{hash=3c7e9d5ed868ff95dac9adfba00b2e7a}{%
+           family={Balzer},
+           familyi={B\bibinitperiod},
+           given={Stephanie},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6fa187678bcd9926269af2195cb766bb}{%
+           family={Pfenning},
+           familyi={P\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{2579ac7aba8ad15a81b909ebabddfdb0}
+      \strng{fullhash}{2579ac7aba8ad15a81b909ebabddfdb0}
+      \strng{bibnamehash}{2579ac7aba8ad15a81b909ebabddfdb0}
+      \strng{authorbibnamehash}{2579ac7aba8ad15a81b909ebabddfdb0}
+      \strng{authornamehash}{2579ac7aba8ad15a81b909ebabddfdb0}
+      \strng{authorfullhash}{2579ac7aba8ad15a81b909ebabddfdb0}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.PL}
+      \field{eprinttype}{arXiv}
+      \field{note}{Technical report}
+      \field{title}{Manifestly Phased Communication via Shared Session Types}
+      \field{year}{2021}
+      \true{nocite}
+      \verb{eprint}
+      \verb 2101.06249
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2101.06249
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2101.06249
+      \endverb
+    \endentry
+    \entry{Sano19ms}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=50975165ba8174e7dc08ab46461cbdd8}{%
+           family={Sano},
+           familyi={S\bibinitperiod},
+           given={Chuta},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Carnegie Mellon University}%
+      }
+      \strng{namehash}{50975165ba8174e7dc08ab46461cbdd8}
+      \strng{fullhash}{50975165ba8174e7dc08ab46461cbdd8}
+      \strng{bibnamehash}{50975165ba8174e7dc08ab46461cbdd8}
+      \strng{authorbibnamehash}{50975165ba8174e7dc08ab46461cbdd8}
+      \strng{authornamehash}{50975165ba8174e7dc08ab46461cbdd8}
+      \strng{authorfullhash}{50975165ba8174e7dc08ab46461cbdd8}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{note}{Technical Report}
+      \field{title}{On Session Typed Contracts for Imperative Languages}
+      \field{type}{Masters Thesis}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb http://reports-archive.adm.cs.cmu.edu/anon/2019/CMU-CS-19-133.pdf
+      \endverb
+      \verb{url}
+      \verb http://reports-archive.adm.cs.cmu.edu/anon/2019/CMU-CS-19-133.pdf
+      \endverb
+    \endentry
+    \entry{Sano18wasa}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=50975165ba8174e7dc08ab46461cbdd8}{%
+           family={Sano},
+           familyi={S\bibinitperiod},
+           given={Chuta},
+           giveni={C\bibinitperiod}}}%
+        {{hash=5823eb7ad4b83d3652dce6fb7c0ca992}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Chao},
+           giveni={C\bibinitperiod}}}%
+        {{hash=f0b2a16976c7da6c35fde367c9ce3e2d}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Zupei},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=73604273129014220e3864b9c87ff067}{%
+           family={Ling},
+           familyi={L\bibinitperiod},
+           given={Zhen},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=dcaf50e6bb3672848bcaa6f4f32f33e2}{%
+           family={Fu},
+           familyi={F\bibinitperiod},
+           given={Xinwen},
+           giveni={X\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=2079a7815695f8a9bca25f89598b7fac}{%
+           family={Chellappan},
+           familyi={C\bibinitperiod},
+           given={Sriram},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6daab9c045b3d0fc9e6183326e04b8ff}{%
+           family={Cheng},
+           familyi={C\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+        {{hash=be6f1b6df7f1ddfafad18806238fa391}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{cf711633f23b34da8fce78ac4d178c56}
+      \strng{fullhash}{6a1cf90e835fe717d107e1ffd47bae17}
+      \strng{bibnamehash}{6a1cf90e835fe717d107e1ffd47bae17}
+      \strng{authorbibnamehash}{6a1cf90e835fe717d107e1ffd47bae17}
+      \strng{authornamehash}{cf711633f23b34da8fce78ac4d178c56}
+      \strng{authorfullhash}{6a1cf90e835fe717d107e1ffd47bae17}
+      \strng{editorbibnamehash}{7110722b45df526a6e5d84f1d3fa8e50}
+      \strng{editornamehash}{7110722b45df526a6e5d84f1d3fa8e50}
+      \strng{editorfullhash}{7110722b45df526a6e5d84f1d3fa8e50}
+      \field{extraname}{3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Wireless Algorithms, Systems, and Applications - 13th International Conference, WASA 2018, Tianjin, China, June 20-22, 2018, Proceedings}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{Turning Legacy IR Devices into Smart IoT Devices}
+      \field{volume}{10874}
+      \field{year}{2018}
+      \field{pages}{412\bibrangedash 424}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1007/978-3-319-94268-1_34
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-3-319-94268-1\_34
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-3-319-94268-1%5C_34
+      \endverb
+    \endentry
+    \entry{Li17icc}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=f0b2a16976c7da6c35fde367c9ce3e2d}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Zupei},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=48b192ffe106fcbdc7cd975cd0f5822f}{%
+           family={Yue},
+           familyi={Y\bibinitperiod},
+           given={Qinggang},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=50975165ba8174e7dc08ab46461cbdd8}{%
+           family={Sano},
+           familyi={S\bibinitperiod},
+           given={Chuta},
+           giveni={C\bibinitperiod}}}%
+        {{hash=306f61b972c01e5452d64353ce1974d6}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+        {{hash=dcaf50e6bb3672848bcaa6f4f32f33e2}{%
+           family={Fu},
+           familyi={F\bibinitperiod},
+           given={Xinwen},
+           giveni={X\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{7610390b54059dd0d49672ede26184e0}
+      \strng{fullhash}{5c004037497d30d043911a54af7f73c1}
+      \strng{bibnamehash}{5c004037497d30d043911a54af7f73c1}
+      \strng{authorbibnamehash}{5c004037497d30d043911a54af7f73c1}
+      \strng{authornamehash}{7610390b54059dd0d49672ede26184e0}
+      \strng{authorfullhash}{5c004037497d30d043911a54af7f73c1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE International Conference on Communications, ICC 2017, Paris, France, May 21-25, 2017}
+      \field{title}{3D vision attack against authentication}
+      \field{year}{2017}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICC.2017.7996462
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1109/ICC.2017.7996462
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1109/ICC.2017.7996462
+      \endverb
+    \endentry
+    \entry{Ling17wcmc}{article}{}
+      \name{author}{9}{}{%
+        {{hash=73604273129014220e3864b9c87ff067}{%
+           family={Ling},
+           familyi={L\bibinitperiod},
+           given={Zhen},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=d40284d3433d6df000866f04941a38e4}{%
+           family={Borgeest},
+           familyi={B\bibinitperiod},
+           given={Melanie},
+           giveni={M\bibinitperiod}}}%
+        {{hash=50975165ba8174e7dc08ab46461cbdd8}{%
+           family={Sano},
+           familyi={S\bibinitperiod},
+           given={Chuta},
+           giveni={C\bibinitperiod}}}%
+        {{hash=01a2f2ed67e4998803b27cfff15c3b64}{%
+           family={Fuller},
+           familyi={F\bibinitperiod},
+           given={Jazmyn},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6233ef4a52ddef9349dc3cfa2f314248}{%
+           family={Cuomo},
+           familyi={C\bibinitperiod},
+           given={Anthony},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b15ce3faf782bcc6ec2f90321863a42a}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Sirong},
+           giveni={S\bibinitperiod}}}%
+        {{hash=306f61b972c01e5452d64353ce1974d6}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+        {{hash=dcaf50e6bb3672848bcaa6f4f32f33e2}{%
+           family={Fu},
+           familyi={F\bibinitperiod},
+           given={Xinwen},
+           giveni={X\bibinitperiod}}}%
+        {{hash=16e27adac1b31563e17c86920f0c910e}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{5161add0c45c47e78940ebf625f4e4bb}
+      \strng{fullhash}{7a3d3036f5f3766b05e7656bc3e045fa}
+      \strng{bibnamehash}{7a3d3036f5f3766b05e7656bc3e045fa}
+      \strng{authorbibnamehash}{7a3d3036f5f3766b05e7656bc3e045fa}
+      \strng{authornamehash}{5161add0c45c47e78940ebf625f4e4bb}
+      \strng{authorfullhash}{7a3d3036f5f3766b05e7656bc3e045fa}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Wirel. Commun. Mob. Comput.}
+      \field{title}{Privacy Enhancing Keyboard: Design, Implementation, and Usability Testing}
+      \field{volume}{2017}
+      \field{year}{2017}
+      \verb{doi}
+      \verb 10.1155/2017/3928261
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1155/2017/3928261
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1155/2017/3928261
+      \endverb
+    \endentry
+    \entry{Ling17wasa}{inproceedings}{}
+      \name{author}{8}{}{%
+        {{hash=73604273129014220e3864b9c87ff067}{%
+           family={Ling},
+           familyi={L\bibinitperiod},
+           given={Zhen},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=d40284d3433d6df000866f04941a38e4}{%
+           family={Borgeest},
+           familyi={B\bibinitperiod},
+           given={Melanie},
+           giveni={M\bibinitperiod}}}%
+        {{hash=50975165ba8174e7dc08ab46461cbdd8}{%
+           family={Sano},
+           familyi={S\bibinitperiod},
+           given={Chuta},
+           giveni={C\bibinitperiod}}}%
+        {{hash=b15ce3faf782bcc6ec2f90321863a42a}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Sirong},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a87d2346a23ac5f78930d065cf5816ce}{%
+           family={Fadl},
+           familyi={F\bibinitperiod},
+           given={Mogahid},
+           giveni={M\bibinitperiod}}}%
+        {{hash=306f61b972c01e5452d64353ce1974d6}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+        {{hash=dcaf50e6bb3672848bcaa6f4f32f33e2}{%
+           family={Fu},
+           familyi={F\bibinitperiod},
+           given={Xinwen},
+           giveni={X\bibinitperiod}}}%
+        {{hash=16e27adac1b31563e17c86920f0c910e}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=7bb50813339c521e285c888bfaeec35d}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Liran},
+           giveni={L\bibinitperiod}}}%
+        {{hash=f6d007a92bc362757bae6aecc1b92091}{%
+           family={Khreishah},
+           familyi={K\bibinitperiod},
+           given={Abdallah},
+           giveni={A\bibinitperiod}}}%
+        {{hash=28f91f3a4b62ce57b7a533e742e8aae1}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=1b543d3b7f1804de6edeb29604e6dde4}{%
+           family={Yan},
+           familyi={Y\bibinitperiod},
+           given={Mingyuan},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{5161add0c45c47e78940ebf625f4e4bb}
+      \strng{fullhash}{1b5849ecb649e9a2b56c6194240a0584}
+      \strng{bibnamehash}{1b5849ecb649e9a2b56c6194240a0584}
+      \strng{authorbibnamehash}{1b5849ecb649e9a2b56c6194240a0584}
+      \strng{authornamehash}{5161add0c45c47e78940ebf625f4e4bb}
+      \strng{authorfullhash}{1b5849ecb649e9a2b56c6194240a0584}
+      \strng{editorbibnamehash}{12eed7639d4aad22b8850629e5c50bd6}
+      \strng{editornamehash}{e93b72549a2946ba4de7cbd37feb446b}
+      \strng{editorfullhash}{12eed7639d4aad22b8850629e5c50bd6}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Wireless Algorithms, Systems, and Applications - 12th International Conference, WASA 2017, Guilin, China, June 19-21, 2017, Proceedings}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{A Case Study of Usable Security: Usability Testing of Android Privacy Enhancing Keyboard}
+      \field{volume}{10251}
+      \field{year}{2017}
+      \field{pages}{716\bibrangedash 728}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1007/978-3-319-60033-8_61
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-3-319-60033-8\_61
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-3-319-60033-8%5C_61
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

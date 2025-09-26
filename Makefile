@@ -1,0 +1,38 @@
+# Makefile for building OCaml project using Dune
+
+.PHONY: all html docs clean
+
+OCAML_FILES := $(wildcard bin/*.ml bin/*.mli)
+OCAML_FILES += bin/dune
+
+HTML_GEN := _build/install/default/bin/main
+
+BIB := resources/cs.bib
+
+# Default target
+all: html docs
+	mkdir -p www/resources
+	cp resources/main.css www
+	cp resources/main.js www
+	cp resources/cs.bib www/resources
+	cp resources/googlefb3a4debafd61d62.html www
+	cp -r resources/pdf www
+	cp tex/cv.pdf www/pdf
+	cd www; opam exec -- dune exec main
+
+$(HTML_GEN): $(OCAML_FILES)
+	opam exec -- dune build
+
+docs: tex/cv.pdf
+
+tex/cv.pdf: $(BIB) tex/cv.tex
+	cp $(BIB) tex
+	cd tex; latexmk cv.tex && latexmk -c cv.tex
+
+# Clean build artifacts
+clean:
+	opam exec -- dune clean
+	rm -rf www
+	rm -f tex/cs.bib
+	cd tex; latexmk -C cv.tex
+

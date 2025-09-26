@@ -1,4 +1,4 @@
 *.swp
 _build
 _opam
-*.html
+www

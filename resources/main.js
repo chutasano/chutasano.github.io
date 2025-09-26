@@ -1,4 +1,4 @@
-var acc = document.querySelectorAll(".pubs_parent button");
+var acc = document.querySelectorAll(".pubs-parent button");
 var i;
 
 for (i = 0; i < acc.length; i++) {
@@ -9,7 +9,7 @@ for (i = 0; i < acc.length; i++) {
     } else {
       this.innerHTML = "+";
     }
-    var children = this.parentNode.querySelectorAll(".pubs_children div");
+    var children = this.parentNode.querySelectorAll(".pubs-children li");
     for (i = 0; i < children.length; i++) {
       if (children[i].style.display === "block") {
         children[i].style.display = "none";
