@@ -76,7 +76,7 @@ let div_bibtex_item (_, i) =
   | Some(note_str) -> [txt (" (" ^ note_str ^ ") ")]
   | None -> []
   in
-  div ~a:[a_class["pubs"]]
+  Aux.mk_div "pubs"
     ([strong [txt title_str]] @ note @ cite_links' @
     [br (); txt (author_str ^ ". " ^ term_str)])
 
@@ -86,7 +86,7 @@ let div_bibtex_entries (parent, children) =
   else
     let div_parent = div_bibtex_item parent in
     let open Tyxml.Html in
-    div ~a:[a_class["pubs-parent"]]
+    Aux.mk_div "pubs-parent"
       [button [txt "+"]; div_parent;
        br ();
        ul ~a:[a_class["pubs-children"]]
@@ -109,10 +109,5 @@ let src () =
   let divs = List.map div_bibtex_entries pubs'' in
   let open Tyxml.Html in
   let t1 = div [h1 [txt "Publications"]] in
-  let index =
-    html (Aux.head Aux.Publications)
-      (body @@
-        [Aux.navbar Aux.Publications; t1] @
-        [ul ~a:[a_class["pub-list"]] (List.map (fun c -> li [c]) divs)]) in
-  index
+  div [t1; ul ~a:[a_class["pub-list"]] (List.map (fun c -> li [c]) divs)]
 

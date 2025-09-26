@@ -20,15 +20,25 @@ let page_name page = match page with
 | Cv -> "CV"
 | Contact -> "Contact"
 
+let%html href url text = "<a href=\""url"\">"[Html.txt text]"</a>"
+
+let%html button text = "<button type=\"button\">"[Html.txt text]"</button>"
+
+let mk_div clas contents =
+  Html.div ~a:[Html.a_class[clas]] contents
+
+let mk_div1 clas content =
+  mk_div clas [content]
+
 
 let navbar active_page =
   let gen_link p =
     if p = active_page then
-      [%html "<li class=\"navactive\"><a href=\""(page_url p)"\">"[Html.txt @@ page_name p]"</a></li>"]
+      [%html "<a class=\"navactive\" href=\""(page_url p)"\">"[Html.txt @@ page_name p]"</a>"]
     else
-      [%html "<li><a href=\""(page_url p)"\">"[Html.txt @@ page_name p]"</a></li>"]
+      [%html "<a href=\""(page_url p)"\">"[Html.txt @@ page_name p]"</a>"]
   in
-  [%html"<div class=\"nav\"><ul>"(List.map gen_link pages)"</ul></div>"]
+  mk_div1 "nav" (mk_div "nav-in" (List.map gen_link pages))
 
 let%html head p =
 {|
@@ -39,6 +49,8 @@ let%html head p =
 </head>
 |}
 
-let%html href url text = "<a href=\""url"\">"[Html.txt text]"</a>"
 
-let%html button text = "<button type=\"button\">"[Html.txt text]"</button>"
+
+let mk_html p body =
+  Html.html (head p)
+    (Html.body [navbar p ; mk_div1 "body-content" body])

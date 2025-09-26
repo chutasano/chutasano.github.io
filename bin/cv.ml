@@ -8,5 +8,5 @@ let%html t =
 </div>
 |}
 
-let src () = Html.html (Aux.head Aux.Cv) (Html.body @@ [Aux.navbar Aux.Cv] @ [t])
+let src () = t
 

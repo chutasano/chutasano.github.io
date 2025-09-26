@@ -11,4 +11,4 @@ let%html t =
 </div>
 |}
 
-let src () = Html.html (Aux.head Aux.Contact) (Html.body @@ [Aux.navbar Aux.Contact] @ [t])
+let src () = t
