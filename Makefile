@@ -10,12 +10,14 @@ HTML_GEN := _build/install/default/bin/main
 BIB := resources/cs.bib
 
 # Default target
-all: html docs
+all: html docs resources/*
 	mkdir -p www/resources
 	cp resources/main.css www
 	cp resources/main.js www
 	cp resources/cs.bib www/resources
 	cp resources/googlefb3a4debafd61d62.html www
+	cp resources/sitemap.xml www
+	cp resources/robots.txt www
 	cp -r resources/pdf www
 	cp tex/cv.pdf www/pdf
 	cd www; opam exec -- dune exec main
