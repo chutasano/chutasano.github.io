@@ -35,17 +35,6 @@ let items_gather_children is =
 let div_bibtex_item (_, i) =
   let author_names = Option.get i.%{authors.f} in
   let author_strs = List.map (fun n -> n.firstname ^ " " ^ n.lastname) author_names in
-  let author_str = (match author_strs with
-    | [] -> ""
-    | [s] -> s
-    | s1::[s2] -> s1 ^ " and " ^ s2
-    | s::strs ->
-        let len = List.length strs in
-        let (str, _) = List.fold_left
-          (fun (str, i) s -> if (i + 1) = len then (str ^ ", and " ^ s, i + 1) else (str ^ ", " ^ s, i + 1))
-          (s, 0) strs in
-        str
-  ) in
   let title_str = Option.get i.%{title.f} in
   let year_str = string_of_int (Option.get i.%{year.f}) in
   let acr_str = i.%{csc_acronym.f} in
@@ -60,6 +49,22 @@ let div_bibtex_item (_, i) =
     Option.map (fun doi -> ("https://doi.org/" ^ (String.concat "/" doi), "doi")) doi
   ] in
   let open Tyxml.Html in
+  let bold_me str = if str = ("Chuta Sano") then b [(txt(str))] else txt str in
+  let author = (match author_strs with
+    | [] -> [txt ""]
+    | [s] -> [bold_me s]
+    | s1::[s2] -> [(bold_me s1)] @ [txt " and "] @ [(bold_me s2)]
+    | s::strs ->
+        let len = List.length strs in
+        let (auth, _) = List.fold_left
+          (fun (str, i) s ->
+            if (i + 1) = len then
+              (str @ [txt(", and ")] @ [bold_me s]
+              , i + 1)
+            else (str @ [txt ", "] @ [bold_me s], i + 1))
+          ([bold_me s], 0) strs in
+        auth
+  ) in
   let cite_links =
     List.map (fun (url, text) -> Aux.href url text) @@ List.map Option.get @@ List.filter Option.is_some links in
   let cite_links' = 
@@ -78,7 +83,7 @@ let div_bibtex_item (_, i) =
   in
   Aux.mk_div "pubs"
     ([strong [txt title_str]] @ note @ cite_links' @
-    [br (); txt (author_str ^ ". " ^ term_str)])
+    [br ()] @ author @ [(txt (". " ^ term_str))])
 
 let div_bibtex_entries (parent, children) =
   let divs_children = List.map div_bibtex_item children in

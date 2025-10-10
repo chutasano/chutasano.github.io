@@ -7,14 +7,15 @@ OCAML_FILES += bin/dune
 
 HTML_GEN := _build/install/default/bin/main
 
-BIB := resources/cs.bib
+BIBNAME := cs.bib
+BIB := resources/$(BIBNAME)
 
 # Default target
 all: html docs resources/*
 	mkdir -p www/resources
 	cp resources/main.css www
 	cp resources/main.js www
-	cp resources/cs.bib www/resources
+	cp $(BIB) www/resources
 	cp resources/googlefb3a4debafd61d62.html www
 	cp resources/sitemap.xml www
 	cp resources/robots.txt www
@@ -27,14 +28,15 @@ $(HTML_GEN): $(OCAML_FILES)
 
 docs: tex/cv.pdf
 
-tex/cv.pdf: $(BIB) tex/cv.tex
-	cp $(BIB) tex
+tex/cv.pdf: $(BIB) tex/cv.tex resources/bib-cv.sh
+	cp $(BIB) tex -f
+	./resources/bib-cv.sh tex/$(BIBNAME)
 	cd tex; latexmk cv.tex && latexmk -c cv.tex
 
 # Clean build artifacts
 clean:
 	opam exec -- dune clean
 	rm -rf www
-	rm -f tex/cs.bib
+	rm -f tex/$(BIBNAME)
 	cd tex; latexmk -C cv.tex
 
