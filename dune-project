@@ -13,5 +13,7 @@
 (package
   (name main)
   (synopsis "webgen")
-  (depends ocaml dune)
+  (depends 
+    (ocaml (>= 5.0.0))
+    dune)
   )
