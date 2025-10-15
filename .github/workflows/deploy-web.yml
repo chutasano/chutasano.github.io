@@ -25,7 +25,7 @@ jobs:
       - name: OCaml
         uses: ocaml/setup-ocaml@v3
         with:
-          ocaml-compiler: 5
+          ocaml-compiler: 5.0.0
 
       - name: OCaml Libs
         run: | 
