@@ -74,7 +74,7 @@ let div_bibtex_item (_, i) =
       | [_] -> l
       | hd::tl -> hd :: (txt " | ") :: (_insert_bar tl)
     in
-    if List.is_empty cite_links then []
+    if List.length cite_links = 0 then []
     else (txt " [")::(_insert_bar cite_links) @ [txt "]"]
   in
   let note = match note with
@@ -87,7 +87,7 @@ let div_bibtex_item (_, i) =
 
 let div_bibtex_entries (parent, children) =
   let divs_children = List.map div_bibtex_item children in
-  if List.is_empty divs_children then div_bibtex_item parent
+  if List.length divs_children = 0 then div_bibtex_item parent
   else
     let div_parent = div_bibtex_item parent in
     let open Tyxml.Html in
