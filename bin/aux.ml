@@ -11,13 +11,13 @@ let pages = [Home; Publications; Cv; Contact]
 let page_url page = match page with
 | Home -> "index.html"
 | Publications -> "publications.html"
-| Cv -> "cv.html"
+| Cv -> "pdf/cv.pdf"
 | Contact -> "contact.html"
 
 let page_name page = match page with
 | Home -> "Home"
 | Publications -> "Publications"
-| Cv -> "CV"
+| Cv -> "CV (PDF)"
 | Contact -> "Contact"
 
 let%html href url text = "<a href=\""url"\">"[Html.txt text]"</a>"
