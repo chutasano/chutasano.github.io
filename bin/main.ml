@@ -3,7 +3,9 @@ open Tyxml
 let pages = let open Aux in [
 (mk_html Home (Home.src ()), page_url Home);
 (mk_html Publications (Publications.src ()), page_url Publications);
-(mk_html Cv (Cv.src ()), page_url Cv);
+(* TODO: Fix Cv page
+   (mk_html Cv (Cv.src ()), page_url Cv);
+ *)
 (mk_html Contact (Contact.src ()), page_url Contact);
 ]
 
