@@ -9,6 +9,7 @@ HTML_GEN := _build/install/default/bin/main
 
 BIBNAME := cs.bib
 BIB := resources/$(BIBNAME)
+BIB2 := resources/cites.bib
 
 # Default target
 all: html docs resources/*
@@ -26,10 +27,16 @@ all: html docs resources/*
 $(HTML_GEN): $(OCAML_FILES)
 	opam exec -- dune build
 
-docs: tex/cv.pdf
+docs: tex/cv.pdf tex/research_statement.pdf
 
 tex/cv.pdf: $(BIB) tex/cv.tex resources/bib-cv.sh
 	cp $(BIB) tex -f
+	./resources/bib-cv.sh tex/$(BIBNAME)
+	cd tex; latexmk cv.tex && latexmk -c cv.tex
+
+tex/research_statement.pdf: $(BIB) $(BIB2) tex/research_statement.tex
+	cp $(BIB) tex -f
+	cp $(BIB2) tex -f
 	./resources/bib-cv.sh tex/$(BIBNAME)
 	cd tex; latexmk cv.tex && latexmk -c cv.tex
 
