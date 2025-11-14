@@ -38,7 +38,7 @@ tex/research_statement.pdf: $(BIB) $(BIB2) tex/research_statement.tex
 	cp $(BIB) tex -f
 	cp $(BIB2) tex -f
 	./resources/bib-cv.sh tex/$(BIBNAME)
-	cd tex; latexmk cv.tex && latexmk -c cv.tex
+	cd tex; latexmk research_statement.tex && latexmk -c research_statement.tex
 
 # Clean build artifacts
 clean:

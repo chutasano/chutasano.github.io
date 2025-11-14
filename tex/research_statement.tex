@@ -1,0 +1,187 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{proof}
+\usepackage{verbatim}
+\usepackage{todonotes}
+\usepackage[colorlinks=true, urlcolor=blue, citecolor=black]{hyperref}
+\usepackage[maxbibnames=15,sorting=ydnt]{biblatex}
+\renewbibmacro*{doi+eprint+url}{%
+\iftoggle{bbx:url}{\iffieldundef{doi}
+{\usebibmacro{url+urldate}}{}}{}%
+\newunit\newblock\iftoggle{bbx:eprint}{\usebibmacro{eprint}}{}%
+\newunit\newblock\iftoggle{bbx:doi}{\printfield{doi}}{}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Chuta Sano}
+\lhead{Research Statement}
+\rfoot{\thepage}
+\setlength{\headheight}{13.59999pt}
+
+\bibliography{cs}
+\bibliography{cites}
+
+\begin{document}
+
+\title{Provably Safe and Reliable Modern Software}
+\author{Chuta Sano}
+\date{\today}
+\maketitle
+
+
+Software systems play a crucial role in many aspects of our society, from everyday applications to critical infrastructure.
+Therefore, it is important to ensure the software we build is reliable and correct.
+However, traditional methods for ensuring software correctness, such as testing or code reviews, do not scale with the increasing complexity of modern software systems, and we need more principled and scalable approaches to build reliable software.
+I address this challenge by developing \emph{type systems}:
+programs that are well-typed according to these type systems are guaranteed to satisfy certain correctness properties, and moreover, they can be automatically verified by a type checker.
+
+More specifically, \textbf{my research centers on the theory and practice of building programming languages that provably guarantee safe and reliable software.}
+As a researcher with a diverse background, I have worked on various topics with a strong network of international collaborators.
+In particular, my main contributions thus far lie in three areas: \emph{safe interoperability}, \emph{safe concurrent programming}, and \emph{verifying programming languages}, which I elaborate on below.
+
+\paragraph{Safe Interoperability}
+Modern software systems often require the combination of multiple programming languages to leverage their respective strengths, i.e., for them to interoperate.
+However, ensuring that these languages can interoperate without violating their individual guarantees is a significant challenge.
+I developed a language that safely allows a pure functional programming language to interoperate with an effectful concurrent language, which I presented at the International Conference on Functional Programming (\textbf{ICFP})~\cite{Sano25icfp}.
+As the primary author, I led the design and writing of this work and worked out the technical details and implemented the language,
+in collaboration with Professors Deepak Garg (Max Planck Institute for Software Systems),
+Ryan Kavanagh (Université du Québec à Montréal),
+Brigitte Pientka (McGill University), and
+Bernardo Toninho (NOVA University of Lisbon).
+
+
+\paragraph{Safe Concurrent Programming}
+Concurrent programming is increasingly important in modern software systems, but ensuring the correctness (e.g., preventing deadlocks) of concurrent programs is notoriously difficult.
+\emph{Session types} statically ensure that concurrent programs follow given communication protocols, preventing common concurrency errors.
+Yet traditional session types are \emph{too restrictive} and cannot model some real-world communication patterns.
+I extended a shared session-type system with a novel subtyping discipline, which captured a kind of stateful communication pattern that appears frequently in practice, and I presented this work at \textbf{COORDINATION'21}~\cite{Sano21coordination}.
+This work was in collaboration with
+Professors Stephanie Balzer and Frank Pfenning
+(Carnegie Mellon University).
+
+\paragraph{Verifying Programming Languages}
+While programming languages with strong type systems provide significant safety guarantees, there is always the possibility of mistakes in the design and implementation of these languages.
+The gold standard to increase our confidence in the correctness of programming languages is to mechanize the language and its proofs in proof assistants, which poses a software engineering challenge.
+I developed a mechanization technique for resource-aware type systems, which I presented at Object-Oriented Programming, Systems, Languages, and Applications (\textbf{OOPSLA})~\cite{Sano23oopsla}.
+This work was in collaboration with
+Professors Ryan Kavanagh (Université du Québec à Montréal) and
+Brigitte Pientka (McGill University).
+This technique has been adopted to mechanize various resource-aware languages by other researchers at the University of Milan and Augusta University, and by many students at McGill University.
+
+In the following sections, I elaborate on each of these three areas, discussing my motivations, contributions, and future directions.
+
+\section*{Safe Interoperability}
+\paragraph{Motivation}
+There are many programming models and paradigms that are designed for
+particular domain-specific use cases.
+Real-world programming often requires the combination of multiple programming languages, i.e., for the languages to \textbf{interoperate} with one another.
+Unfortunately, in practice, this is achieved through manual, ad hoc techniques,
+and the kind of safety guarantees that these combinations offer are
+minimal at best.
+These kinds of programming practices are hard to scale and maintain, and I therefore
+believe that it is paramount to develop principled frameworks to enable safe and reliable interoperability between diverse programming languages.
+
+\subsection*{Contributions}
+\textbf{(1)} My aforementioned work at ICFP~\cite{Sano25icfp} developed a programming language that \textbf{safely combines a pure functional programming language with an effectful concurrent language} based on the session-typed process calculus.
+The key insight is to treat the concurrent language as \emph{first-class code} in the functional language that can be manipulated and executed.
+This design allows us to maintain a clean separation of the two languages while isolating exactly where they interact, making it easier to modularly reason about each language and their interactions.
+Further, we prove that all operations on code are \emph{type-safe}, ensuring that any process code transformations, such as optimizations based on runtime data, performed by the functional language provably cannot violate any safety guarantees, such as deadlock freedom, of the concurrent language.
+
+\textbf{(2)} I co-authored a paper that uses a similar methodology to \textbf{safely interoperate a functional programming language with a quantum circuit language}, which is currently under submission to ESOP'26~\cite{Kavanagh25arxiv}.
+I played a large role in the design of the language, mechanized the language alongside a type preservation proof, and wrote some parts of the paper.
+Here, the functional language captures quantum circuits as first-class code, which gives an alternate formulation of Quipper~\cite{Green13pldi}, a popular quantum programming language.
+The advantage of our design is mainly in our representation of quantum circuits as a linear functional language, which allows us to leverage well-studied techniques to reason about the entire language, making it better-suited for formal reasoning and mechanization.
+
+\textbf{(3)} I am currently working on a paper, expected to complete around February 2026, to \textbf{safely interoperate a high-level functional language with a low-level assembly-like language}, again, based on the idea of capturing the low-level language as first-class code in the high-level language.
+This work is motivated by the fact that many real-world programs take advantage of low-level programming, such as inline assembly, to achieve better performance or access certain hardware features.
+Yet, the interactions with low-level assembly code that these mechanisms offer are unsafe and can easily lead to errors.
+By treating low-level assembly code as first-class code in the high-level language, we can isolate exactly where the two languages interact and make the interaction type-safe.
+
+\subsection*{Future Directions}
+All three works mentioned above follow a common methodology of using first-class code to enable the safe interoperability of two languages with different characteristics.
+Indeed, in my ongoing PhD thesis, I am drawing from these works to develop a general methodology to interoperate a collection of languages through first-class code.
+Importantly, I prove that all operations on code are \emph{type-safe}, ensuring interoperating languages cannot violate each other's safety guarantees.
+Since interoperability is a broad problem that appears in many contexts, I am currently working on various applications of this methodology.
+
+I have also observed that many real-world computing devices are \emph{heterogeneous systems}, where multiple computing devices must coordinate with each other.
+Of increasing importance are \textbf{quantum computing systems},
+where a classical computer coordinates with a quantum coprocessor to perform quantum computations.
+In an ongoing project, I am continuing to iterate on our quantum interoperability work~\cite{Kavanagh25arxiv} by extending it with a notion of \emph{dynamic lifting}, which allows the interleaving of classical and quantum computations.
+
+My experiences working with Internet of Things (IoT)~\cite{Sano18wasa} and robotics~\footnote{I worked as a software engineer for the robotics company iRobot.} further motivate me to consider heterogeneous systems as an important application of safe interoperability.
+For example, many IoT devices also follow an architecture consisting of a main processor and a low-power coprocessor that handles sensing and simple computations, and in practice, this kind of coordination between two devices is achieved through very ad hoc and error-prone methods.
+Many robotics systems also follow the same model where a high-level navigation system coordinates with a low-level control system.
+
+
+\section*{Safe Concurrent Programming}
+\subsection*{Motivation}
+Concurrent programming is seeing increased importance due to its
+compatibility with modern CPUs containing multiple cores and its ability to model
+distributed programs.
+One promising direction in reasoning about concurrent programs is through \emph{message-passing concurrency}, which forces concurrent processes to synchronize through explicit sending and receiving of data instead of sharing memory.
+Programming languages such as Go and Erlang follow this paradigm and have seen great success in supporting various real-world applications.
+Of these message-passing systems, (binary) \textbf{session types} is a type discipline that ensure processes follow given protocols when sending and receiving messages across channels.
+These session-typed systems statically guarantee that the resulting programs will not deadlock or cause data races.
+
+\subsection*{Contributions}
+\textbf{(1)} In my work at COORDINATION'21~\cite{Sano21coordination}, I addressed a limitation of \emph{shared} session-typed systems: the type system could not express stateful communication patterns that appear frequently in practice.
+Shared session type systems~\cite{Balzer17icfp} allow multiple processes to share a channel through an acquire-and-release semantics, meaning that a process must acquire a shared channel to use it and release it at the original type when done.
+Yet, many protocols in practice require maintaining state across multiple uses of a shared channel, for example, interactions with a database connection pool require maintaining and updating a transaction state.
+I addressed this limitation by extending shared session types with a subtyping discipline, which allows a process to remember its past acquire-release state when releasing it.
+
+\textbf{(2)} My aforementioned work that combined functional programming with session-typed process calculus~\cite{Sano25icfp} also addresses a challenge in session types: the difficulty of integrating them with ordinary programming paradigms, such as functional programming.
+By separating ``standard'' programming and concurrent programming (via session types), I was able to modularly reason about each language and isolate their interactions, making for a more manageable formalization.
+Another consequence of this work is that our treatment of the concurrent process calculus language as code enables us to write functions that optimize concurrent code while ensuring that the optimizations preserve types.
+Common optimizations for concurrent and distributed algorithms such as batch optimization can be expressed as functions that manipulate code, and our type-safe code framework ensures that these optimizations, which can even be performed at runtime, are correct by construction.
+Indeed, my interest in this problem of integrating session types was motivated by my prior work that formalized session types with a C-like imperative language~\cite{Sano19ms}.
+
+\subsection*{Future Directions}
+While my work primarily focuses on (binary) session types as a means of writing safe concurrent code, I am interested in exploring other concurrency models as well.
+For example, choreographic programming and multiparty session types also model message-passing concurrency but focus on global descriptions of communication protocols.
+Similarly, Go and Erlang both employ message-passing concurrency but not through session types.
+
+\section*{Verifying Programming Languages}
+\subsection*{Motivation}
+While strong type systems are a significant improvement for ensuring safety guarantees, they are not infallible:
+there is always the possibility of on-paper mistakes in the design and metatheory of type systems.
+Further, even if the type system is correct on paper, a compiler implementation of the language may have bugs that violate the intended guarantees.
+Thus, to further increase our confidence in the correctness of programming languages, I believe that \textbf{mechanizing} the metatheory of programming languages is paramount.
+However, mechanization is a significant software engineering challenge in and of itself, and like software engineering, there are many ad hoc
+decisions that need to be made when mechanizing a programming language.
+\textbf{I am especially interested in understanding and developing best practices for mechanizing programming languages.}
+To that end, there have been efforts by the research community to understand the trade-offs between various mechanization techniques
+to mechanize simple functional languages alongside common proof techniques~\cite{Aydemir05tphols, Abel19jfp}.
+However, there is still much to be explored in this space, especially when mechanizing more complex language features.
+
+\subsection*{Contributions}
+\textbf{(1)} I developed a mechanization technique for languages with \textbf{substructural}, i.e., resource-aware, type systems, and applied it to mechanize a complex session-typed system in the proof assistant Beluga, which I presented at OOPSLA~\cite{Sano23oopsla}.
+The key insight is that we can separate the concerns of resource usage from the rest of the language as an independent syntactic check, allowing us to first model the language without substructurality and then layer on top a separate syntactic check that enforces the substructural properties.
+The main benefit of this technique is that we can leverage standard,
+well-understood techniques for modeling variables without worrying
+about the complications that arise from substructurality, making mechanizations of resource-aware type systems more manageable.
+
+\textbf{(2)} I co-authored a follow-up work that applied this principle of separating resource usage from the rest of the language to develop CARVe, a library for managing substructural contexts, which won the \emph{Best Paper Award} at CPP'25~\cite{Zackon25cpp}.
+I helped develop the design of the language, mechanized several case studies, and wrote a large part of the paper.
+Due to technical reasons, the aforementioned work at OOPSLA synergizes best with higher-order abstract syntax (HOAS) for representing variables.
+CARVe instead uses a natural representation of variable contexts as lists, making it synergistic with most mechanization techniques for modeling variables, and annotates its elements with tags that track their resource usage.
+For any given substructural type system, the tags form a \emph{resource algebra} that we can reason about separately, and indeed, the separation of resource usage is clear when we consider the trivial resource algebra with one element that states that all variables are always available.
+
+\subsection*{Future Directions}
+I am currently exploring further applications of these mechanization techniques to other substructural type systems.
+In particular, in my aforementioned project on developing a quantum programming language via interoperability, we are applying the methodology outlined in my prior work at OOPSLA~\cite{Sano23oopsla} to mechanize a quantum programming language, where variables that represent qubits are \emph{linear}, i.e., they must be used exactly once.
+A novelty in this mechanization is a proof of normalization, which requires a logical relations argument that is not straightforward, especially in the presence of substructurality.
+Despite that, we can leverage standard techniques to mechanize the logical relations proof of the language without substructurality, which is easily achieved due to our separation of resource usage from the rest of the language.
+
+\section*{Future Plans}
+My short-term research agenda is to develop a \emph{programming ecosystem} where components written in diverse languages --- functional, imperative, concurrent, or even quantum --- can safely interoperate with each other.
+My diverse research experiences have given me a strong foundation to pursue this goal, and I plan to pursue further applications and case studies, such as in IoT, of my code-based methodology to bring safe interoperability to real-world programming scenarios.
+In the long term, I aspire to continue contributing to the theoretical foundations necessary to building reliable software systems and to translate these foundations into practical programming tools that can be used by software developers.
+
+\printbibliography
+
+\end{document}
