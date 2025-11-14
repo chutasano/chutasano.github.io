@@ -22,6 +22,7 @@ all: html docs resources/*
 	cp resources/robots.txt www
 	cp -r resources/pdf www
 	cp tex/cv.pdf www/pdf
+	cp tex/research_statement.pdf www/pdf
 	cd www; opam exec -- dune exec main
 
 $(HTML_GEN): $(OCAML_FILES)
