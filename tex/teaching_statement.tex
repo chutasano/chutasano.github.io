@@ -1,0 +1,136 @@
+\documentclass[11pt]{article}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0.0,0.6,0.0}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{proof}
+\usepackage{verbatim}
+\usepackage[backend=bibtex,style=alphabetic]{biblatex}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{microtype}
+\usepackage[margin=1in]{geometry}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Chuta Sano}
+\lhead{Teaching Statement}
+\rfoot{\thepage}
+\setlength{\headheight}{13.59999pt}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+
+\begin{document}
+
+\title{Teaching Statement}
+\author{Chuta Sano}
+\maketitle{}
+
+In academia, teaching, advising, and research work hand in hand, complementing one another.
+I value teaching and advising not only for their own sakes but also for the many unexpected learning benefits from engaging with students of diverse academic backgrounds.
+
+At McGill University, I served as a teaching assistant for \emph{Programming Languages and Paradigms}, \textbf{an undergraduate-level functional programming course with about 300 students} and \emph{Logic and Computation}, \textbf{a graduate-level theory course with about 40 students}.
+I was awarded the Best Teaching Assistant Award in 2023 based on student nominations for my work in \emph{Logic and Computation}.
+I am currently \textbf{advising two undergraduate students} on their honors-level theses and have informally advised several other student groups on class projects as part of \emph{Logic and Computation}.
+These experiences have helped me develop a flexible teaching and advising style that adapts to the needs of different students and course logistics.
+
+In the following, I describe my general teaching philosophy and elaborate on my teaching experiences. I then describe my advising philosophy and experiences.
+
+\section*{Teaching}
+Computer science is a broad field that encompasses both theory and software-engineering practices, each requiring different teaching styles.
+Furthermore, logistical details such as class size, classroom setup, and available resources also influence what teaching styles are most effective.
+I emphasize adapting my teaching style primarily based on two factors: whether the course topic is in theory or software engineering, and whether the class size is small ($\sim 50$ max) or large.
+In the interest of brevity, I will consider two categories, \emph{a theory course in a small class} and \emph{a programming course in a large class}.
+These two, in my experience, cover the majority of scenarios and are therefore the most important to discuss.
+
+\subsection*{Theory Course in a Small Class}
+For any given lecture, my general workflow consists of \textbf{preparing lecture notes, delivering the lecture on a blackboard, and releasing my notes} after adjusting them based on the actual lecture.
+Generally, I find this style of teaching more effective than using pre-prepared slides since it allows for more flexibility and interactivity during the lecture.
+
+When introducing new theoretical concepts, I focus on \textbf{starting small to build intuition} before giving formal definitions.
+For example, in \emph{Logic and Computation}, I gave several lectures covering Linear Logic, which requires that assumptions are used exactly once.
+I started by giving simple examples of resource usage in everyday life, such as the concept of purchasing items with money.
+I then gradually formalized this idea to build a logical system that models shopping where assumptions correspond to money and purchased items correspond to conclusions.
+This way, I was able to motivate the restrictions of Linear Logic based on the money analogy: the absence of contraction represents the inability to duplicate money, and the absence of weakening represents the inability (or undesirability) to throw away money.
+This made the transition to Linear Logic much smoother, as students gained intuition on the idea of treating assumptions as resources and why this restriction is useful.
+
+My lectures were very well-received by students; students acknowledged it during their nomination of me for the Best Teaching Assistant Award, where they noted, ``The lectures you gave during the semester were fantastic''.
+They also highlighted, ``Your patience, kindness, and clear explanations of difficult topics'', which I believe is a testament to my teaching style.
+
+I also believe a core part of student learning, especially for theory courses, is through reflecting on their assignments.
+In Logic and Computation, I spent a significant amount of effort in \textbf{grading assignments to provide clear and personalized feedback}, and our policy to allow resubmissions of assignments gave students a strong incentive to take my feedback seriously.
+The positive effect of this was clear; students attended office hours much more frequently than in past semesters, often bringing in their previous submissions and my feedback to discuss how they could improve.
+This was also reflected in student feedback, where they noted
+``The extra effort you made to explain complex topics going beyond the material in class''.
+
+
+\begin{comment}
+I also place a heavy emphasis on designing \textbf{assignments that encourage students to explore the material on their own}.
+For example, in \emph{Logic and Computation}, I designed an assignment on the aforementioned Linear Logic, where I asked students to explore the role of the restrictions of Linear Logic by making explicit the structural rules of weakening and contraction.
+In particular, I asked students to prove propositions both with and without these structural rules to see for themselves how the presence or absence of these rules affected the provability of certain statements.
+\end{comment}
+
+
+\subsection*{Programming Course in a Large Class}
+The aforementioned style of giving flexible lectures via blackboard and personalized feedback on assignments does not scale well to large class sizes.
+Thus, I value giving organized and well-structured lectures through a computer-based setup, both through slides and live-coding demonstrations.
+I still retain some flexibility and interactivity with the slide-based presentation through the use of a drawing tablet attached to my computer, allowing me to seemlessly write on slides.
+Broadly speaking, I teach particular programming concepts and techniques by introducing small examples that serve as motivating cases.
+I then gradually build on these examples to arrive at the core concept and then give additional applications of the concept to solidify student understanding.
+
+However, large courses especially require iterating on the course materials and structure over multiple semesters, due to the complexity arising from the large number of students and TAs/staff involved.
+Therefore, I will spend a significant amount of time understanding and adapting to existing course structures and materials from past semesters.
+For example, while I believe the web-based LearnOCaml platform is a great tool to teach functional programming (and OCaml), I would first familiarize myself with any language and tools that past courses used and consider trade-offs of different design choices in the course before making any changes.
+
+As a teaching assistant for \emph{Programming Languages and Paradigms} (2022 Fall), I was responsible for designing and grading assignments, grading exams, and holding office hours.
+Our class used OCaml as the main programming language and a web-based platform LearnOCaml for assignments, which included an interpreter and an auto-grader.
+Thus, the development of assignments involved designing code templates and writing (randomized) test cases for the auto-grader in addition to the usual assignment specifications.
+Given the large class size, I placed a heavy emphasis on \textbf{designing clear and unambiguous assignment specifications} -- I found that this helps not only to reduce the number of confusion amongst students but also to increase the number of students who can help others.
+While I actively monitored the course forum (via Discord), I noticed the assignments I designed had much more interaction between students.
+
+\section*{Advising}
+I view advising as an opportunity to mentor students in their academic and professional growth.
+There is, unfortunately, no one-size-fits-all approach to advising, as each student has different strengths and work-styles;
+some students prefer to dictate the pace of their project, while others prefer more structured guidance with frequent check-ins.
+These kinds of expectations are tuned over time, so I do my part by assuring students that I am available at any time, and that they can approach me with any questions or concerns.
+
+
+\subsubsection*{Experience}
+I have advised several student groups on class projects as part of \emph{Logic and Computation}, where I provided feedback on their project progress, presentation, and final report.
+I am also currently advising two undergraduate students on their honors-level theses; both students are working on projects based on my research, and I give regular feedback on their progress and help them navigate technical challenges.
+
+
+\section*{Teaching Plan}
+I believe I am capable of teaching just about any core computer science course.
+However, given my background, I am especially well-suited to teach courses in general programming with rigor (such as CSC110Y1 or CSC111H1) compilers (CSC488H1), and theory of computation (CSC236H1).
+I would also like to teach graduate-level courses on topics that are aligned with my research, such as verification and foundations of programming languages.
+
+\begin{comment} Generic
+I believe I am capable of teaching just about any core computer science course.
+However, given my background, I am especially well-suited to teach courses in general programming (especially functional programming), compilers (COMS W4115), and theory of computation.
+I would also like to teach graduate-level courses on topics that are aligned with my research, such as verification and foundations of programming languages.
+\end{comment}
+
+\begin{comment} Cornell Ithaca
+However, given my background, I am especially well-suited to teach courses in general programming (especially CS 3110), compilers (CS 4120), and theory of computation (CS 4110).
+I would also like to teach graduate-level courses on topics that are aligned with my research, such as verification and foundations of programming languages.
+\end{comment}
+
+\begin{comment} Cornell Tech
+While I believe my background demonstrates that I am capable of teaching just about any core computer science course, I am also well-suited to teach graduate courses on topics that are aligned with my research, such as verification and foundations of programming languages.
+I am also interested in designing and teaching new courses based on ongoing research, such as a course on formal verification techniques for programming languages.
+\end{comment}
+
+\begin{comment} UCB
+However, given my background, I am especially well-suited to teach courses in general programming (especially CS 61A) and compilers (CS 164).
+I would also like to teach graduate-level courses on topics that are aligned with my research, such as verification and foundations of programming languages.
+\end{comment}
+
+\begin{comment} U of T
+I believe I am capable of teaching just about any core computer science course.
+However, given my background, I am especially well-suited to teach courses in general programming with rigor (such as CSC110Y1 or CSC111H1) compilers (CSC488H1), and theory of computation (CSC236H1).
+I would also like to teach graduate-level courses on topics that are aligned with my research, such as verification and foundations of programming languages.
+\end{comment}
+
+\end{document}
+
